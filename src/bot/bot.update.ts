@@ -3,7 +3,13 @@ import { Context, Telegraf } from 'telegraf';
 
 @Update()
 class BotUpdate {
-  constructor(@InjectBot() private readonly bot: Telegraf<Context>) {}
+  constructor(
+    @InjectBot('RU') private readonly botRU: Telegraf<Context>,
+    @InjectBot('EN') private readonly botEN: Telegraf<Context>,
+    @InjectBot('ES') private readonly botES: Telegraf<Context>,
+    @InjectBot('PR') private readonly botPR: Telegraf<Context>,
+  ) {}
+
   @Start()
   async start(@Ctx() ctx: Context) {
     if (ctx.chat.type !== 'private') {
