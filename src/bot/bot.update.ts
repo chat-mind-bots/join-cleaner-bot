@@ -6,7 +6,16 @@ class BotUpdate {
   constructor(@InjectBot() private readonly bot: Telegraf<Context>) {}
   @Start()
   async start(@Ctx() ctx: Context) {
-    await ctx.reply('Welcome');
+    if (ctx.chat.type !== 'private') {
+      return;
+    }
+    ctx.from.language_code === 'ru'
+      ? await ctx.reply(
+          'Привет! Добавь меня в групповой чат и тогда я буду удалять системные сообщения в нем!',
+        )
+      : await ctx.reply(
+          "Hi. Add me to the group chat and then I'll delete system messages in it!",
+        );
   }
 
   @On('video_chat_started')
