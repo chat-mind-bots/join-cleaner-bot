@@ -9,8 +9,33 @@ import BotUpdate from 'src/bot/bot.update';
   providers: [BotService, BotUpdate],
   imports: [
     ConfigModule.forRoot(),
-    TelegrafModule.forRoot({
-      token: process.env!.BOT_TOKEN,
+    TelegrafModule.forRootAsync({
+      imports: [ConfigModule],
+      botName: 'RU',
+      useFactory: async () => ({
+        token: process.env!.BOT_TOKEN_RU,
+      }),
+    }),
+    TelegrafModule.forRootAsync({
+      imports: [ConfigModule],
+      botName: 'EN',
+      useFactory: async () => ({
+        token: process.env!.BOT_TOKEN_EN,
+      }),
+    }),
+    TelegrafModule.forRootAsync({
+      imports: [ConfigModule],
+      botName: 'ES',
+      useFactory: async () => ({
+        token: process.env!.BOT_TOKEN_ES,
+      }),
+    }),
+    TelegrafModule.forRootAsync({
+      imports: [ConfigModule],
+      botName: 'PR',
+      useFactory: async () => ({
+        token: process.env!.BOT_TOKEN_PR,
+      }),
     }),
   ],
   exports: [BotUpdate],
