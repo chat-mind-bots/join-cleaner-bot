@@ -1,7 +1,10 @@
 import { Ctx, InjectBot, On, Start, Update } from 'nestjs-telegraf';
 import { Context, Telegraf } from 'telegraf';
+import { TelegrafExceptionFilter } from 'src/common/filters/telegraf-exeption.filter';
+import { UseFilters } from '@nestjs/common';
 
 @Update()
+@UseFilters(TelegrafExceptionFilter)
 class BotUpdate {
   constructor(
     @InjectBot('RU') private readonly botRU: Telegraf<Context>,
