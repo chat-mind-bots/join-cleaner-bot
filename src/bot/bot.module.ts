@@ -32,9 +32,9 @@ import BotUpdate from 'src/bot/bot.update';
     }),
     TelegrafModule.forRootAsync({
       imports: [ConfigModule],
-      botName: 'PR',
+      botName: 'PT',
       useFactory: async () => ({
-        token: process.env!.BOT_TOKEN_PR,
+        token: process.env!.BOT_TOKEN_PT,
       }),
     }),
   ],

@@ -1,5 +1,6 @@
 import { Ctx, InjectBot, On, Start, Update } from 'nestjs-telegraf';
 import { Context, Telegraf } from 'telegraf';
+import { I18nService } from 'nestjs-i18n';
 
 @Update()
 class BotUpdate {
@@ -7,7 +8,8 @@ class BotUpdate {
     @InjectBot('RU') private readonly botRU: Telegraf<Context>,
     @InjectBot('EN') private readonly botEN: Telegraf<Context>,
     @InjectBot('ES') private readonly botES: Telegraf<Context>,
-    @InjectBot('PR') private readonly botPR: Telegraf<Context>,
+    @InjectBot('PT') private readonly botPT: Telegraf<Context>,
+    private readonly i18n: I18nService,
   ) {}
 
   @Start()
@@ -15,13 +17,18 @@ class BotUpdate {
     if (ctx.chat.type !== 'private') {
       return;
     }
-    ctx.from.language_code === 'ru'
-      ? await ctx.reply(
-          'Привет! Добавь меня в групповой чат и тогда я буду удалять системные сообщения в нем!',
-        )
-      : await ctx.reply(
-          "Hi. Add me to the group chat and then I'll delete system messages in it!",
-        );
+    const username = `${ctx.from.first_name || ''} ${ctx.from.last_name || ''}`;
+    const lang = ctx.from.language_code || 'en';
+
+    await ctx.reply(
+      this.i18n.t('commands-reply.start', {
+        lang,
+        args: {
+          username,
+        },
+      }),
+    );
+    return;
   }
 
   @On('video_chat_started')
