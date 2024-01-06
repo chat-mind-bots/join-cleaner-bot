@@ -1,6 +1,7 @@
 import { Ctx, InjectBot, On, Start, Update } from 'nestjs-telegraf';
 import { Context, Telegraf } from 'telegraf';
 import { I18nService } from 'nestjs-i18n';
+import { BotService } from 'src/bot/bot.service';
 
 @Update()
 class BotUpdate {
@@ -10,6 +11,7 @@ class BotUpdate {
     @InjectBot('ES') private readonly botES: Telegraf<Context>,
     @InjectBot('PT') private readonly botPT: Telegraf<Context>,
     private readonly i18n: I18nService,
+    private readonly botService: BotService,
   ) {}
 
   @Start()
@@ -19,6 +21,8 @@ class BotUpdate {
     }
     const username = `${ctx.from.first_name || ''} ${ctx.from.last_name || ''}`;
     const lang = ctx.from.language_code || 'en';
+
+    await this.botService.registerNewUser(ctx.from);
 
     await ctx.reply(
       this.i18n.t('commands-reply.start', {
