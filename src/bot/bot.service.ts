@@ -10,7 +10,6 @@ export class BotService {
   }
 
   async registerNewUser(user: tt.User) {
-    // console.log(this.dbClient);
     const result = await this.dbClient.emit('CREATE_USER', { telegram: user });
     result.pipe(
       map((res) => {
