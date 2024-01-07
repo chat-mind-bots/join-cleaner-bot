@@ -8,10 +8,7 @@ RUN apk add --no-cache yarn
 WORKDIR /app
 
 # Copy the package.json and yarn.lock files into the container
-COPY package.json yarn.lock ./
-
-# Copy .npmrc
-COPY .npmrc ./
+COPY package.json yarn.lock .npmrc ./
 
 # Install dependencies using Yarn
 RUN yarn install --frozen-lockfile
