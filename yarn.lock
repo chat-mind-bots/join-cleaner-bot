@@ -360,10 +360,10 @@
     rxjs "^7.8.1"
     typegram "^5.2.0"
 
-"@chat-mind-bots/rabbit-patterns@^1.0.8":
-  version "1.0.8"
-  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/rabbit-patterns/1.0.8/7a4b3cc631a709a93745640256b98acaad676edc#7a4b3cc631a709a93745640256b98acaad676edc"
-  integrity sha512-SuQdVR6G9cDR2jKWSZ3NoHldAWUDKnvBgG3bl2irpux1jp3p1ElPvGiLY7SgEreuFIORJGVMdidGJ1kSxIlv0w==
+"@chat-mind-bots/rabbit-patterns@^1.0.9":
+  version "1.0.9"
+  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/rabbit-patterns/1.0.9/cf833f28dee0d41411a6b706ed1273bb8f43afec#cf833f28dee0d41411a6b706ed1273bb8f43afec"
+  integrity sha512-4H0oZtAWO6HQIl4U1ap3SpgoIvHYFbyszpMXfKYaP6GLa50fcTZvetJ+26BPa77R5ks599Gf88TccAiZiK+e8g==
   dependencies:
     "@chat-mind-bots/bots-models" "^1.1.6"
     "@nestjs/common" "^10.0.0"

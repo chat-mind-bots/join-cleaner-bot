@@ -22,7 +22,8 @@ class BotUpdate {
     const username = `${ctx.from.first_name || ''} ${ctx.from.last_name || ''}`;
     const lang = ctx.from.language_code || 'en';
 
-    await this.botService.registerNewUser(ctx.from);
+    const botUserName: string = (await ctx.telegram.getMe()).username;
+    await this.botService.registerNewUser(ctx.from, botUserName);
 
     await ctx.reply(
       this.i18n.t('commands-reply.start', {

@@ -13,8 +13,8 @@ export class BotService {
     this.dbClient.connect();
   }
 
-  async registerNewUser(user: tt.User) {
-    const payload: ICreateUserPayload = { telegram: user };
+  async registerNewUser(user: tt.User, botLogin: string) {
+    const payload: ICreateUserPayload = { telegram: user, botLogin };
     const result = await this.dbClient.emit(CREATE_USER, payload);
     result.pipe(
       map((res) => {
