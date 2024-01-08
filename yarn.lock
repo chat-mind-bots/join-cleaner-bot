@@ -346,10 +346,10 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@chat-mind-bots/bots-models@^1.1.6":
-  version "1.1.6"
-  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/bots-models/1.1.6/3f298b1cc61ad5ae012cb60faf65adaf516b6be4#3f298b1cc61ad5ae012cb60faf65adaf516b6be4"
-  integrity sha512-tMc4ft/FExWpHGSGLe33AwkK6oKjhg2cDSepLQ259NUJr66nl6ErOcFdBizwHGnaTvyXEe5Js2DQ6NptjbiGrQ==
+"@chat-mind-bots/bots-models@^1.1.8":
+  version "1.1.8"
+  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/bots-models/1.1.8/8318e7e1cc04112fb61142fb1e9d505f2369bc66#8318e7e1cc04112fb61142fb1e9d505f2369bc66"
+  integrity sha512-93mx8wWJXNWi4dEw63BZ95cENoT6MmrghZKtVivsb9kqtRwW513054NT+XxtX74NizjPSAD71FxQwIxl4bTNKw==
   dependencies:
     "@nestjs/common" "^10.0.0"
     "@nestjs/core" "^10.0.0"
@@ -360,12 +360,12 @@
     rxjs "^7.8.1"
     typegram "^5.2.0"
 
-"@chat-mind-bots/rabbit-patterns@^1.0.9":
-  version "1.0.9"
-  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/rabbit-patterns/1.0.9/cf833f28dee0d41411a6b706ed1273bb8f43afec#cf833f28dee0d41411a6b706ed1273bb8f43afec"
-  integrity sha512-4H0oZtAWO6HQIl4U1ap3SpgoIvHYFbyszpMXfKYaP6GLa50fcTZvetJ+26BPa77R5ks599Gf88TccAiZiK+e8g==
+"@chat-mind-bots/rabbit-patterns@^1.0.10":
+  version "1.0.10"
+  resolved "https://npm.pkg.github.com/download/@chat-mind-bots/rabbit-patterns/1.0.10/510a97ab4119ec761df1f79744fa8a6611324f23#510a97ab4119ec761df1f79744fa8a6611324f23"
+  integrity sha512-Picrzis6xkfaLk5ji+D7H0mhemMk5Fhb9o1XBuBsFp9RcmchOJ0HQh4PQKspU68rua5tRhMR7cSDEh8E81wTHw==
   dependencies:
-    "@chat-mind-bots/bots-models" "^1.1.6"
+    "@chat-mind-bots/bots-models" "^1.1.8"
     "@nestjs/common" "^10.0.0"
     "@nestjs/core" "^10.0.0"
     "@nestjs/platform-express" "^10.0.0"
